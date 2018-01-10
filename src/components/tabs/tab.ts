@@ -306,7 +306,7 @@ export class Tab extends NavControllerBase implements ITab {
       this.setElementClass('show-tab', true);
       // okay, first thing we need to do if check if the view already exists
       const nameToUse = segment && segment.name ? segment.name : this.root;
-      const dataToUse = segment ? segment.data : this.rootParams;
+      const dataToUse = segment && segment.data ? segment.data : this.rootParams;
       const numViews = this.length() - 1;
       for (let i = numViews; i >= 0; i--) {
         const viewController = this.getByIndex(i);
